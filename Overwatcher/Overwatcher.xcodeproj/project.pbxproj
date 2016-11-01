@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5395D6F1DB8B33C0024424D /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5395D6E1DB8B33C0024424D /* SharedData.swift */; };
+		F5586AA91DC6A4CA00A18A4D /* StatisticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5586AA81DC6A4CA00A18A4D /* StatisticsController.swift */; };
 		F5D3FB771DAF8A18000A1B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB761DAF8A18000A1B66 /* AppDelegate.swift */; };
 		F5D3FB791DAF8A18000A1B66 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D3FB781DAF8A18000A1B66 /* LoginController.swift */; };
 		F5D3FB7C1DAF8A18000A1B66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D3FB7A1DAF8A18000A1B66 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F5395D6E1DB8B33C0024424D /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
+		F5586AA81DC6A4CA00A18A4D /* StatisticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsController.swift; sourceTree = "<group>"; };
 		F5D3FB731DAF8A18000A1B66 /* Overwatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overwatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D3FB761DAF8A18000A1B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D3FB781DAF8A18000A1B66 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				F5D3FBB21DB0EE8E000A1B66 /* BattleUser.swift */,
 				F5D3FBBE1DB3CB81000A1B66 /* MainTabController.swift */,
 				F5D3FBC01DB3D1CA000A1B66 /* TeamBuilderController.swift */,
+				F5395D6E1DB8B33C0024424D /* SharedData.swift */,
+				F5586AA81DC6A4CA00A18A4D /* StatisticsController.swift */,
 			);
 			path = Overwatcher;
 			sourceTree = "<group>";
@@ -318,6 +324,8 @@
 				F5D3FB791DAF8A18000A1B66 /* LoginController.swift in Sources */,
 				F5D3FBB31DB0EE8E000A1B66 /* BattleUser.swift in Sources */,
 				F5D3FBC11DB3D1CA000A1B66 /* TeamBuilderController.swift in Sources */,
+				F5395D6F1DB8B33C0024424D /* SharedData.swift in Sources */,
+				F5586AA91DC6A4CA00A18A4D /* StatisticsController.swift in Sources */,
 				F5D3FBBF1DB3CB81000A1B66 /* MainTabController.swift in Sources */,
 				F5D3FB771DAF8A18000A1B66 /* AppDelegate.swift in Sources */,
 			);
@@ -468,7 +476,6 @@
 		F5D3FB9C1DAF8A19000A1B66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -485,7 +492,6 @@
 		F5D3FB9D1DAF8A19000A1B66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -572,6 +578,7 @@
 				F5D3FB9D1DAF8A19000A1B66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5D3FB9E1DAF8A19000A1B66 /* Build configuration list for PBXNativeTarget "OverwatcherTests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +587,7 @@
 				F5D3FBA01DAF8A19000A1B66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F5D3FBA11DAF8A19000A1B66 /* Build configuration list for PBXNativeTarget "OverwatcherUITests" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +596,7 @@
 				F5D3FBA31DAF8A19000A1B66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,8 +18,12 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var lookUp: UIButton!
     
+    @IBOutlet weak var loadingLabel: UILabel!
+    
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    
     var battleUser: BattleUser!
-    var failed = false
+    var failed = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +36,19 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    
     @IBAction func onClick(_ sender: UIButton) {
+        activityView.isHidden = false
+        activityView.startAnimating()
+        loadingLabel.isHidden = false
+        lookUp.isEnabled = false
+        
         loadJsonData()
         
-        if(failed){
-            showMessage()
-        }
+        
     }
     
     func parseJsonData(data: [String:Any]) {
@@ -61,6 +72,7 @@ class LoginController: UIViewController {
         battleUser.level = data["level"] as! Int
         battleUser.battleTag = battleID.text!
         
+        SharedData.sharedInstance.battleUser = battleUser
         addToDB()
     }
     
@@ -77,7 +89,9 @@ class LoginController: UIViewController {
                 user.first?.rating = battleUser.rating
             }
         }
-        //switchScreen()
+        DispatchQueue.main.async() {
+            self.performSegue(withIdentifier: "mainAppSegue", sender: nil)
+        }
     }
     
     
@@ -97,7 +111,7 @@ class LoginController: UIViewController {
                         if(jsonObject["data"] != nil){
                             self.parseJsonData(data: jsonObject["data"] as! [String:Any])
                         } else {
-                            self.failed = true
+                            self.showMessage()
                             return
                         }
                     }
@@ -106,15 +120,19 @@ class LoginController: UIViewController {
             }
             dataTask.resume()
         } else {
-            failed = true
+            failed = -1
         }
     }
     
     func showMessage(){
+        DispatchQueue.main.async() {
+            self.activityView.isHidden = true
+            self.loadingLabel.isHidden = true
         let alertController = UIAlertController(title: "Failed", message: "Battle.net ID is incorrect. Please try again.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Close", style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-        failed = false
+        self.present(alertController, animated: true, completion: nil)
+            self.lookUp.isEnabled = true
+        }
     }
     
     func verifyUrl (url: URL?) -> Bool {
