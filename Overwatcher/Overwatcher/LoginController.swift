@@ -71,6 +71,7 @@ class LoginController: UIViewController {
         battleUser.username = data["username"] as! String
         battleUser.level = data["level"] as! Int
         battleUser.battleTag = battleID.text!
+        battleUser.role = "Tank"
         
         SharedData.sharedInstance.battleUser = battleUser
         addToDB()
@@ -79,6 +80,7 @@ class LoginController: UIViewController {
     func addToDB(){
         let realm = try! Realm()
         let user = realm.objects(BattleUser.self).filter("battleTag = '\(battleID.text!)'")
+        let testUser = user.first
         
         if(user.count == 0){
             try! realm.write {

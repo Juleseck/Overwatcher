@@ -24,6 +24,7 @@ class BattleUser : Object {
     dynamic var compTime = ""
     dynamic var avatar = ""
     dynamic var rankImg = ""
+    dynamic var role = "Tank"
     
     override static func primaryKey() -> String? {
         return "battleTag"

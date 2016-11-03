@@ -32,9 +32,9 @@ class StatisticsController: UIViewController {
         cWinsLabel.text = String(battleUser.compWins)
         cLostLabel.text = String(battleUser.compLost)
         cTotalLabel.text = String(battleUser.totalPlayed)
-        cTimeLabel.text = battleUser.compTime
+        cTimeLabel.text = battleUser.compTime.replacingOccurrences(of: "hours", with: "")
         qWinsLabel.text = String(battleUser.quickWins)
-        qTimeLabel.text = battleUser.quickTime
+        qTimeLabel.text = battleUser.quickTime.replacingOccurrences(of: "hours", with: "")
         
         if let checkedUrl = URL(string: battleUser.rankImg) {
             ratingImage.contentMode = .scaleAspectFit

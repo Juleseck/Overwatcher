@@ -1,18 +1,20 @@
 //
-//  MainTabController.swift
+//  DetailsViewController.swift
 //  Overwatcher
 //
-//  Created by Fhict on 16/10/16.
+//  Created by Fhict on 02/11/16.
 //  Copyright © 2016 Jules. All rights reserved.
 //
 
 import UIKit
 
-class MainTabController: UITabBarController {
+class DetailsViewController: UIViewController {
 
+    var selectedHero = Hero()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectedIndex = 1
+
         // Do any additional setup after loading the view.
     }
 

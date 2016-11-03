@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
 class SharedData{
     
     var battleUser = BattleUser()
+    var foundPlayers = [BattleUser]()
     static var sharedInstance = SharedData()
 
 }
